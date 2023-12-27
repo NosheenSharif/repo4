@@ -1,12 +1,18 @@
 FROM node:16-alpine
 
-RUN apk add -U git curl
+# Install python and pip
+RUN apk add --update py2-pip
 
-# Use a lightweight, official Nginx image as the base image
+# install Python modules needed by the Python app
+COPY requirements.txt /usr/src/app/
+RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
-
-# Copy the local files to the container
+# copy files required for the app to run
+COPY app.py .
 COPY index.html .
 
-# Expose port 80 for the web server
+# tell the port number the container should expose
 EXPOSE 5000
+
+# run the application
+CMD ["python", "app.py"]

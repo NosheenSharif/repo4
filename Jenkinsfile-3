@@ -1,4 +1,7 @@
 pipeline {
+  environment {
+        registry = "296799303071.dkr.ecr.us-east-1.amazonaws.com/jenkin"
+    }
   agent { dockerfile true }
   stages {
     stage('Test') {

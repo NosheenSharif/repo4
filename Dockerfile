@@ -9,4 +9,4 @@ RUN apk add -U git curl
 COPY index.html .
 
 # Expose port 80 for the web server
-EXPOSE 80
+EXPOSE 5000

@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM alpine:3.5
 
 RUN apk add -U git curl
 

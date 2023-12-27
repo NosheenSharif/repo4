@@ -8,8 +8,8 @@ jobs:
      - uses: actions/checkout@v2
      - name: Build and push the image
        run: |
-        docker login --username nosheensharif --password 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 ghcr.io
-        docker build . --tag ghcr.io/nosheensharif/hello-world-ghcr:latest
-        docker push ghcr.io/nosheensharif/hello-world-ghcr:latest
+        docker login --username nosheensharif --password ${{ secrets.GH_DOC2 }} ghcr.io
+        docker build . --tag ghcr.io/nosheensharif/hello-package1:latest
+        docker push ghcr.io/nosheensharif/hello-package1:latest
 
 
